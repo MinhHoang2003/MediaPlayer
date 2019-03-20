@@ -108,14 +108,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String formatTime(int millis) {
-
-        String time = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(millis),
+       String time = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(millis),
                 TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
         return time;
     }
-
-
-
     private void permissionRequest() {
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
