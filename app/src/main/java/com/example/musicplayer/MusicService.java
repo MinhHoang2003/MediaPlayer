@@ -71,10 +71,10 @@ public class MusicService extends Service {
                 }
             }
         }
-//        String test = "";
-//        for (int i = 0; i < 10; i++) {
-//            test = test + " " + listSong.get(i).getName();
-//        }
+        String test = "";
+        for (int i = 0; i < 10; i++) {
+            test = test + " " + listSong.get(i).getName();
+        }
         Log.d(TAG, "readMediaFile: " + listSong.size());
 
     }
