@@ -1,8 +1,11 @@
 package com.example.musicplayer;
 
 import android.Manifest;
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.media.MediaPlayer;
@@ -34,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     private AppCompatSeekBar seekBar;
     private Handler handler;
 
+
+    private BroadcastReceiver broadcastReceiver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         permissionRequest();
 
         handler = new Handler();
+
+
+
 
 //        final MediaPlayer mediaPlayer;
 //        readMediaFile();
@@ -105,6 +114,19 @@ public class MainActivity extends AppCompatActivity {
 
         Intent musicIntent = new Intent(this,MusicService.class);
         startService(musicIntent);
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(MusicService.NEXT);
+        registerReceiver(broadcastReceiver,filter);
+
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if(intent.getAction().equals(MusicService.NEXT)){
+                    Log.d(TAG, "onReceive: ");
+                }
+            }
+        };
+
     }
 
     private String formatTime(int millis) {
@@ -131,4 +153,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onStop() {
+        unregisterReceiver(broadcastReceiver);
+        super.onStop();
+    }
 }
