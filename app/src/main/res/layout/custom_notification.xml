@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imageSong"
+        android:src="@drawable/musicicon"
+        android:layout_width="90dp"
+        android:layout_height="90dp" />
+
+    <TextView
+        android:id="@+id/textSongTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imageSong"
+        android:text="Song title"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/textSongAuthor"
+        android:text="Song Author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imageSong"
+        android:layout_below="@id/textSongTitle"/>
+    <Button
+        android:id="@+id/btnSkip"
+        android:background="@drawable/ic_skip_previous_black_24dp"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_below="@id/textSongAuthor"
+        android:layout_toRightOf="@id/imageSong"
+        />
+
+    <Button
+        android:id="@+id/btnPause"
+        android:background="@drawable/ic_pause_black_24dp"
+        android:layout_width="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/btnSkip"
+        android:layout_marginRight="8dp"
+        android:layout_below="@id/textSongAuthor"/>
+    <Button
+        android:id="@+id/btnNext"
+        android:background="@drawable/ic_skip_next_black_24dp"
+        android:layout_width="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/btnPause"
+        android:layout_below="@id/textSongAuthor"/>
+</RelativeLayout>
