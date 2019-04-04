@@ -1,79 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:gravity="center_vertical"
+<LinearLayout
+    android:orientation="vertical"
+    android:weightSum="10"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <android.support.v7.widget.AppCompatSeekBar
-        android:id="@+id/seekBar"
-        android:outlineAmbientShadowColor="@color/colorAccent"
+    <ListView
+        android:id="@+id/ListView"
+        android:layout_weight="5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <RelativeLayout
-        android:id="@+id/player_process"
-        android:layout_below="@id/seekBar"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/txt_time"
-            android:layout_marginLeft="8dp"
-            android:text="0:00"
-            android:textSize="15dp"
-            android:layout_alignParentLeft="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/txt_duration"
-            android:text="5:30"
-            android:textSize="15dp"
-            android:layout_marginRight="8dp"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </RelativeLayout>
+        android:layout_height="0dp"></ListView>
 
     <LinearLayout
-        android:layout_below="@+id/player_process"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/btn_previous"
-            android:src="@drawable/ic_skip_previous_black_24dp"
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/seekBar"
+            android:outlineAmbientShadowColor="@color/colorAccent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <ImageButton
-            android:id="@+id/btn_pause"
-            android:src="@drawable/ic_pause_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageButton
-            android:id="@+id/btn_play"
-            android:src="@drawable/ic_play_arrow_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="TODO" />
-        <ImageButton
-            android:id="@+id/btn_stop"
-            android:src="@drawable/ic_stop_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageButton
-            android:id="@+id/btn_nextTo"
-            android:src="@drawable/ic_skip_next_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:id="@+id/player_process"
+            android:layout_below="@id/seekBar"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txt_time"
+                android:layout_marginLeft="8dp"
+                android:text="0:00"
+                android:textSize="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txt_duration"
+                android:text="5:30"
+                android:textSize="15dp"
+                android:layout_marginRight="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/player_process"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/btn_previous"
+                android:src="@drawable/ic_skip_previous_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageButton
+                android:id="@+id/btn_pause"
+                android:onClick="onClick"
+                android:src="@drawable/ic_pause_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageButton
+                android:id="@+id/btn_play"
+                android:onClick="onClick"
+                android:src="@drawable/ic_play_arrow_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO" />
+            <ImageButton
+                android:id="@+id/btn_stop"
+                android:onClick="onClick"
+                android:src="@drawable/ic_stop_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageButton
+                android:id="@+id/btn_nextTo"
+                android:onClick="onClick"
+                android:src="@drawable/ic_skip_next_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
     </LinearLayout>
 
-
-
-</RelativeLayout>
+</LinearLayout>
